@@ -10,10 +10,21 @@ const addresses = [
 
 ];
 
-const list = document.createElement("ul");
-const listContainer = document.querySelector('nav.js-link-container');
+const div1 = document.createElement("div");
+div1.style.display = 'flex';
+div1.style.justifyContent = 'center';
 
-listContainer.appendChild(list);
+const list = document.createElement("ul");
+list.style.display = 'flex';
+// list.style.flexDirection = 'column';
+list.style.listStyleType = "none";
+list.style.width = '50%';
+div1.appendChild(list);
+
+
+const listContainer = document.querySelector('nav.js-link-container');
+listContainer.appendChild(div1);
+
 
 
 function createLink(address) {
@@ -22,6 +33,9 @@ function createLink(address) {
     const link = document.createElement('a');
     link.setAttribute('href', address);
     link.textContent = address;
+    link.style.display = "inline-block";
+    link.style.textDecoration = "none";
+    link.style.padding = "20px 40px 20px 0";
     listItem.appendChild(link);
     list.appendChild(listItem);
 }
